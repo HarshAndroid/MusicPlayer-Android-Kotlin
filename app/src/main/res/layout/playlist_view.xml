@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="?attr/themeColor"
+    android:layout_margin="10dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/playlistImg"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:src="@drawable/music_player_icon_slash_screen"
+        app:shapeAppearanceOverlay="@style/curved"
+        android:contentDescription="@string/song_img"/>
+    <TextView
+        android:id="@+id/playlistName"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="@string/playlist_name"
+        android:contentDescription="@string/playlist_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="130dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"/>
+
+    <ImageButton
+        android:id="@+id/playlistDeleteBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/delete_icon"
+        app:tint="?attr/themeColor"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="130dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/playlist_delete"/>
+
+</com.google.android.material.card.MaterialCardView>
