@@ -6,7 +6,8 @@
     app:cardCornerRadius="15dp"
     app:strokeWidth="2dp"
     app:strokeColor="?attr/themeColor"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/playlistImg"
@@ -39,6 +40,6 @@
         android:layout_marginTop="130dp"
         android:layout_marginStart="130dp"
         android:backgroundTint="@android:color/transparent"
-        android:contentDescription="@string/playlist_delete"/>
+        android:contentDescription="@string/playlist_delete" />
 
 </com.google.android.material.card.MaterialCardView>

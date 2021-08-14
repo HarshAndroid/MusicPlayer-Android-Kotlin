@@ -45,17 +45,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
         <item name="android:forceDarkAllowed">false</item>
     </style>
-    <style name="coolBlack" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="themeColor">@color/black</item>
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
-        <item name="android:forceDarkAllowed">false</item>
-    </style>
+
     //Theme for Navigation Drawer
     <style name="coolPinkNav" parent="Theme.MaterialComponents.Light">
         <item name="themeColor">@color/cool_pink</item>
@@ -101,11 +91,23 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
         <item name="android:forceDarkAllowed">false</item>
     </style>
-    <style name="coolBlackNav" parent="Theme.MaterialComponents.Light">
+    //new dark Theme
+    <style name="coolBlack" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="themeColor">@color/black</item>
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColor</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+    <style name="coolBlackNav" parent="Theme.MaterialComponents.DayNight">
         <item name="themeColor">@color/black</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/cool_pink</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>

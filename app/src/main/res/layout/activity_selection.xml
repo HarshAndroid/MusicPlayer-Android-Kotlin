@@ -22,7 +22,7 @@
             android:layout_height="50dp"
             android:src="@drawable/back_icon"
             android:contentDescription="@string/back_btn"
-            android:backgroundTint="@android:color/transparent"
+            android:backgroundTint="?colorOnPrimary"
             app:tint="@color/black"
             android:layout_margin="5dp"/>
 
@@ -35,7 +35,8 @@
             android:focusable="false"
             app:iconifiedByDefault="false"
             android:background="@drawable/custom_search_view"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            app:closeIcon="@null"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

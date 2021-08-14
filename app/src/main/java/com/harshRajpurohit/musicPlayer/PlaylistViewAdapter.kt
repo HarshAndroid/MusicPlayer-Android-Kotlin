@@ -27,6 +27,9 @@ class PlaylistViewAdapter(private val context: Context, private var playlistList
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
+        if(MainActivity.themeIndex == 4){
+            holder.root.setStrokeColor(ContextCompat.getColor(context, R.color.white))
+        }
         holder.name.text = playlistList[position].name
         holder.name.isSelected = true
         holder.delete.setOnClickListener {

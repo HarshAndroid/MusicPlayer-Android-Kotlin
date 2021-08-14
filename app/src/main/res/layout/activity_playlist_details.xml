@@ -117,7 +117,7 @@
             android:drawableLeft="@drawable/add_icon"
             android:text="@string/add_song"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="?colorOnPrimary"
             tools:ignore="RtlHardcoded" />
 
         <!--Remove Button-->
@@ -131,7 +131,7 @@
             android:drawableLeft="@drawable/remove_icon"
             android:text="@string/remove_all"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="?colorOnPrimary"
             tools:ignore="RtlHardcoded" />
 
     </LinearLayout>

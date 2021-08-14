@@ -31,7 +31,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:drawableTop="@drawable/shuffle_icon"
                     android:text="@string/shuffle_btn"
-                    android:textColor="@color/black"
+                    android:textColor="?colorOnPrimary"
                     android:textAllCaps="false"/>
                 <!--Favourites Button-->
                 <Button
@@ -43,7 +43,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:drawableTop="@drawable/favourite_icon"
                     android:text="@string/favourites_btn"
-                    android:textColor="@color/black"
+                    android:textColor="?colorOnPrimary"
                     android:textAllCaps="false"/>
                 <!--Playlists Button-->
                 <Button
@@ -55,7 +55,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:drawableTop="@drawable/playlist_icon"
                     android:text="@string/playlist_btn"
-                    android:textColor="@color/black"
+                    android:textColor="?colorOnPrimary"
                     android:textAllCaps="false"/>
 
             </LinearLayout>
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/total_songs"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:layout_margin="10dp"/>
 
             <androidx.recyclerview.widget.RecyclerView

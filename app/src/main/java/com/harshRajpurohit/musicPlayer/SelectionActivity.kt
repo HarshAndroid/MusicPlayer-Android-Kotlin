@@ -3,6 +3,7 @@ package com.harshRajpurohit.musicPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harshRajpurohit.musicPlayer.databinding.ActivitySelectionBinding
 
@@ -38,5 +39,14 @@ class SelectionActivity : AppCompatActivity() {
                 return true
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //for black theme checking
+        if(MainActivity.themeIndex == 4)
+        {
+            binding.searchViewSA.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+        }
     }
 }
