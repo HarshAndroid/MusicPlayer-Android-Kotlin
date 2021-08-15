@@ -18,6 +18,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     private lateinit var mediaSession : MediaSessionCompat
     private lateinit var runnable: Runnable
     lateinit var audioManager: AudioManager
+    lateinit var playbackState: PlaybackStateCompat
 
     override fun onBind(intent: Intent?): IBinder {
         mediaSession = MediaSessionCompat(baseContext, "My Music")
@@ -29,7 +30,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             return this@MusicService
         }
     }
-    fun showNotification(playPauseBtn: Int, playbackSpeed: Float){
+    fun showNotification(playPauseBtn: Int){
         val intent = Intent(baseContext, MainActivity::class.java)
         val contentIntent = PendingIntent.getActivity(this, 0, intent, 0)
 
@@ -69,13 +70,15 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             .build()
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            val playbackSpeed = if(mediaPlayer!!.isPlaying) 0F else 1F
             mediaSession.setMetadata(MediaMetadataCompat.Builder()
                 .putLong(MediaMetadataCompat.METADATA_KEY_DURATION, mediaPlayer!!.duration.toLong())
                 .build())
-            mediaSession.setPlaybackState(PlaybackStateCompat.Builder()
+            val playBackState = PlaybackStateCompat.Builder()
                 .setState(PlaybackStateCompat.STATE_PLAYING, mediaPlayer!!.currentPosition.toLong(), playbackSpeed)
                 .setActions(PlaybackStateCompat.ACTION_SEEK_TO)
-                .build())
+                .build()
+            mediaSession.setPlaybackState(playBackState)
         }
 
         startForeground(13, notification)
@@ -87,7 +90,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             PlayerActivity.musicService!!.mediaPlayer!!.setDataSource(PlayerActivity.musicListPA[PlayerActivity.songPosition].path)
             PlayerActivity.musicService!!.mediaPlayer!!.prepare()
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
-            PlayerActivity.musicService!!.showNotification(R.drawable.pause_icon, 0F)
+            PlayerActivity.musicService!!.showNotification(R.drawable.pause_icon)
             PlayerActivity.binding.tvSeekBarStart.text = formatDuration(mediaPlayer!!.currentPosition.toLong())
             PlayerActivity.binding.tvSeekBarEnd.text = formatDuration(mediaPlayer!!.duration.toLong())
             PlayerActivity.binding.seekBarPA.progress = 0
@@ -110,7 +113,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             //pause music
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
             NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
-            showNotification(R.drawable.play_icon, 0F)
+            showNotification(R.drawable.play_icon)
             PlayerActivity.isPlaying = false
             mediaPlayer!!.pause()
         }
@@ -118,7 +121,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             //play music
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
             NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
-            showNotification(R.drawable.pause_icon, 1F)
+            showNotification(R.drawable.pause_icon)
             PlayerActivity.isPlaying = true
            mediaPlayer!!.start()
         }
