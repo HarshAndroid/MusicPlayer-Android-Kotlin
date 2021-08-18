@@ -63,17 +63,17 @@ class NowPlaying : Fragment() {
     }
 
     private fun playMusic(){
+        PlayerActivity.isPlaying = true
         PlayerActivity.musicService!!.mediaPlayer!!.start()
         binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
         PlayerActivity.musicService!!.showNotification(R.drawable.pause_icon)
         PlayerActivity.binding.nextBtnPA.setIconResource(R.drawable.pause_icon)
-        PlayerActivity.isPlaying = true
     }
     private fun pauseMusic(){
+        PlayerActivity.isPlaying = false
         PlayerActivity.musicService!!.mediaPlayer!!.pause()
         binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
         PlayerActivity.musicService!!.showNotification(R.drawable.play_icon)
         PlayerActivity.binding.nextBtnPA.setIconResource(R.drawable.play_icon)
-        PlayerActivity.isPlaying = false
     }
 }

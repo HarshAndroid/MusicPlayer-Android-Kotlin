@@ -18,7 +18,6 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     private lateinit var mediaSession : MediaSessionCompat
     private lateinit var runnable: Runnable
     lateinit var audioManager: AudioManager
-    lateinit var playbackState: PlaybackStateCompat
 
     override fun onBind(intent: Intent?): IBinder {
         mediaSession = MediaSessionCompat(baseContext, "My Music")
@@ -70,7 +69,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             .build()
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-            val playbackSpeed = if(mediaPlayer!!.isPlaying) 0F else 1F
+            val playbackSpeed = if(PlayerActivity.isPlaying) 1F else 0F
             mediaSession.setMetadata(MediaMetadataCompat.Builder()
                 .putLong(MediaMetadataCompat.METADATA_KEY_DURATION, mediaPlayer!!.duration.toLong())
                 .build())
