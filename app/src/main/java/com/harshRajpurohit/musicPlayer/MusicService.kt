@@ -78,6 +78,17 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
                 .setActions(PlaybackStateCompat.ACTION_SEEK_TO)
                 .build()
             mediaSession.setPlaybackState(playBackState)
+            mediaSession.setCallback(object: MediaSessionCompat.Callback(){
+                override fun onSeekTo(pos: Long) {
+                    super.onSeekTo(pos)
+                    mediaPlayer!!.seekTo(pos.toInt())
+                    val playBackStateNew = PlaybackStateCompat.Builder()
+                        .setState(PlaybackStateCompat.STATE_PLAYING, mediaPlayer!!.currentPosition.toLong(), playbackSpeed)
+                        .setActions(PlaybackStateCompat.ACTION_SEEK_TO)
+                        .build()
+                    mediaSession.setPlaybackState(playBackStateNew)
+                }
+            })
         }
 
         startForeground(13, notification)
