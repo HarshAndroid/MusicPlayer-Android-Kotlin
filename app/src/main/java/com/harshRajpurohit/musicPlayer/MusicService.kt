@@ -10,7 +10,6 @@ import android.os.*
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
-import androidx.media.app.NotificationCompat
 
 class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     private var myBinder = MyBinder()
@@ -58,7 +57,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             .setContentText(PlayerActivity.musicListPA[PlayerActivity.songPosition].artist)
             .setSmallIcon(R.drawable.music_icon)
             .setLargeIcon(image)
-            .setStyle(NotificationCompat.MediaStyle().setMediaSession(mediaSession.sessionToken))
+            .setStyle(androidx.media.app.NotificationCompat.MediaStyle().setMediaSession(mediaSession.sessionToken))
             .setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
             .setVisibility(androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC)
             .setOnlyAlertOnce(true)
@@ -123,17 +122,18 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             //pause music
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
             NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
-            showNotification(R.drawable.play_icon)
             PlayerActivity.isPlaying = false
             mediaPlayer!!.pause()
+            showNotification(R.drawable.play_icon)
+
         }
         else{
             //play music
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
             NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
-            showNotification(R.drawable.pause_icon)
             PlayerActivity.isPlaying = true
-           mediaPlayer!!.start()
+            mediaPlayer!!.start()
+            showNotification(R.drawable.pause_icon)
         }
     }
 
