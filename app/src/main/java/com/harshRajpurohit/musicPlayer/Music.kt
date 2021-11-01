@@ -64,17 +64,10 @@ fun favouriteChecker(id: String): Int{
     return -1
 }
 fun checkPlaylist(playlist: ArrayList<Music>): ArrayList<Music>{
-    val iter = playlist.iterator()
-    while(iter.hasNext()){
-        val music = iter.next()
+    playlist.forEachIndexed { index, music ->
         val file = File(music.path)
         if(!file.exists())
-            playlist.remove(music) 
-    }  
-//    playlist.forEachIndexed { index, music ->
-//        val file = File(music.path)
-//        if(!file.exists())
-//            playlist.removeAt(index)
-//    }
+            playlist.removeAt(index)
+    }
     return playlist
 }
