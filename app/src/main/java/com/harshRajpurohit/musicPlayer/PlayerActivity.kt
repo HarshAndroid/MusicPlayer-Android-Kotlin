@@ -130,6 +130,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             
         }
         binding.favouriteBtnPA.setOnClickListener {
+            fIndex = favouriteChecker(musicListPA[songPosition].id)
             if(isFavourite){
                 isFavourite = false
                 binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
