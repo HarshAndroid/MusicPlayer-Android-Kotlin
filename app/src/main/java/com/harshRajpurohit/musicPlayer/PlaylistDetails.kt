@@ -2,10 +2,8 @@ package com.harshRajpurohit.musicPlayer
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -61,8 +59,8 @@ class PlaylistDetails : AppCompatActivity() {
                 }
             val customDialog = builder.create()
             customDialog.show()
-            customDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
-            customDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.RED)
+
+            setDialogBtnBackground(this, customDialog)
         }
     }
 

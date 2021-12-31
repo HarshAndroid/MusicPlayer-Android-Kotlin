@@ -1,11 +1,13 @@
 package com.harshRajpurohit.musicPlayer
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.media.audiofx.LoudnessEnhancer
 import android.os.*
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
@@ -28,6 +30,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             return this@MusicService
         }
     }
+    @SuppressLint("UnspecifiedImmutableFlag")
     fun showNotification(playPauseBtn: Int){
         val intent = Intent(baseContext, MainActivity::class.java)
         val contentIntent = PendingIntent.getActivity(this, 0, intent, 0)
@@ -94,17 +97,19 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     }
     fun createMediaPlayer(){
         try {
-            if (PlayerActivity.musicService!!.mediaPlayer == null) PlayerActivity.musicService!!.mediaPlayer = MediaPlayer()
-            PlayerActivity.musicService!!.mediaPlayer!!.reset()
-            PlayerActivity.musicService!!.mediaPlayer!!.setDataSource(PlayerActivity.musicListPA[PlayerActivity.songPosition].path)
-            PlayerActivity.musicService!!.mediaPlayer!!.prepare()
+            if (mediaPlayer == null) mediaPlayer = MediaPlayer()
+            mediaPlayer!!.reset()
+            mediaPlayer!!.setDataSource(PlayerActivity.musicListPA[PlayerActivity.songPosition].path)
+            mediaPlayer!!.prepare()
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
-            PlayerActivity.musicService!!.showNotification(R.drawable.pause_icon)
+            showNotification(R.drawable.pause_icon)
             PlayerActivity.binding.tvSeekBarStart.text = formatDuration(mediaPlayer!!.currentPosition.toLong())
             PlayerActivity.binding.tvSeekBarEnd.text = formatDuration(mediaPlayer!!.duration.toLong())
             PlayerActivity.binding.seekBarPA.progress = 0
             PlayerActivity.binding.seekBarPA.max = mediaPlayer!!.duration
             PlayerActivity.nowPlayingId = PlayerActivity.musicListPA[PlayerActivity.songPosition].id
+            PlayerActivity.loudnessEnhancer = LoudnessEnhancer(mediaPlayer!!.audioSessionId)
+            PlayerActivity.loudnessEnhancer.enabled = true
         }catch (e: Exception){return}
     }
 
@@ -127,14 +132,14 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             showNotification(R.drawable.play_icon)
 
         }
-        else{
-            //play music
-            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
-            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
-            PlayerActivity.isPlaying = true
-            mediaPlayer!!.start()
-            showNotification(R.drawable.pause_icon)
-        }
+//        else{
+//            //play music
+//            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
+//            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
+//            PlayerActivity.isPlaying = true
+//            mediaPlayer!!.start()
+//            showNotification(R.drawable.pause_icon)
+//        }
     }
 
     //for making persistent

@@ -19,14 +19,14 @@
 <!--    Back Button-->
         <ImageButton
             android:id="@+id/backBtnPA"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/back_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
             android:layout_marginStart="5dp"
             android:contentDescription="@string/back_btn"
             app:tint="?colorOnPrimary"
-            android:padding="10dp"/>
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -41,10 +41,10 @@
 <!--        Favourite Button-->
         <ImageButton
             android:id="@+id/favouriteBtnPA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/favourite_empty_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
             android:layout_marginEnd="20dp"
             android:contentDescription="@string/favourites_btn"
             app:tint="@android:color/holo_red_dark" />
@@ -72,7 +72,8 @@
         android:textSize="18sp"
         android:textColor="?colorOnPrimary"
         android:gravity="center"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:textIsSelectable="true" />
 
 <!--    Floating Buttons for Previous, Pause & Next-->
     <LinearLayout
@@ -150,17 +151,17 @@
 <!--    Last Row for Various Player Options-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:layout_weight="1">
 
 <!--        Repeat Button-->
         <ImageButton
             android:id="@+id/repeatBtnPA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:src="@drawable/repeat_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/repeat_btn"
             android:layout_weight="1"
             tools:ignore="NestedWeights"
@@ -169,10 +170,10 @@
 <!--        Equalizer Button-->
         <ImageButton
             android:id="@+id/equalizerBtnPA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:src="@drawable/equalizer_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/equalizer_btn"
             android:layout_weight="1"
             app:tint="@color/cool_pink" />
@@ -180,10 +181,10 @@
 <!--        Timer Button-->
         <ImageButton
             android:id="@+id/timerBtnPA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:src="@drawable/timer_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/timer_btn"
             android:layout_weight="1"
             app:tint="@color/cool_pink" />
@@ -191,10 +192,22 @@
 <!--        Share Button-->
         <ImageButton
             android:id="@+id/shareBtnPA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:src="@drawable/share_icon"
-            android:background="@android:color/transparent"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/share_btn"
+            android:layout_weight="1"
+            app:tint="@color/cool_pink" />
+
+
+        <!--       Volume Button-->
+        <ImageButton
+            android:id="@+id/boosterBtnPA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/volume_icon"
+            android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/share_btn"
             android:layout_weight="1"
             app:tint="@color/cool_pink" />

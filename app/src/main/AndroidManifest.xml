@@ -48,8 +48,9 @@
         <activity
             android:name=".PlayerActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
-            android:configChanges="uiMode">
+            tools:ignore="AppLinkUrlError,LockedOrientationActivity"
+            android:configChanges="uiMode"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
@@ -61,7 +62,8 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"
-            android:configChanges="uiMode">
+            android:configChanges="uiMode"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

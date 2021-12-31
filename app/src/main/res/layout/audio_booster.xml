@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.lukelorusso.verticalseekbar.VerticalSeekBar
+        android:id="@+id/verticalBar"
+        android:layout_width="50dp"
+        android:layout_height="200dp"
+        app:vsb_bar_corner_radius="15dp"
+        android:layout_margin="16dp"
+        app:vsb_progress="0"
+        app:vsb_max_value="15"
+        app:vsb_thumb_placeholder_src="@drawable/booster_icon"
+        app:vsb_use_thumb_to_set_progress="true"
+        app:vsb_thumb_container_tint="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:text="@string/world_of_music"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

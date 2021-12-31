@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    app:cardCornerRadius="15dp"
+    android:layout_margin="5dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/songImgFV"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
         app:shapeAppearanceOverlay="@style/curved"
         android:contentDescription="@string/song_name"
-        android:src="@drawable/music_player_icon_slash_screen"/>
+        android:src="@drawable/music_player_icon_slash_screen"
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/songNameFV"
-        android:layout_width="70dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:maxLines="2"
         android:textColor="?colorOnPrimary"
         android:text="@string/song_name"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_marginTop="75dp"
+        android:padding="5dp"/>
 
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

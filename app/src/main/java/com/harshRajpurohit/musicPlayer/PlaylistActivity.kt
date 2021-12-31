@@ -38,7 +38,7 @@ class PlaylistActivity : AppCompatActivity() {
         val customDialog = LayoutInflater.from(this@PlaylistActivity).inflate(R.layout.add_playlist_dialog, binding.root, false)
         val binder = AddPlaylistDialogBinding.bind(customDialog)
         val builder = MaterialAlertDialogBuilder(this)
-        builder.setView(customDialog)
+        val dialog = builder.setView(customDialog)
             .setTitle("Playlist Details")
             .setPositiveButton("ADD"){ dialog, _ ->
                 val playlistName = binder.playlistName.text
@@ -49,7 +49,9 @@ class PlaylistActivity : AppCompatActivity() {
                         addPlaylist(playlistName.toString(), createdBy.toString())
                     }
                 dialog.dismiss()
-            }.show()
+            }.create()
+        dialog.show()
+        setDialogBtnBackground(this, dialog)
 
     }
     private fun addPlaylist(name: String, createdBy: String){

@@ -1,6 +1,10 @@
  package com.harshRajpurohit.musicPlayer
 
+import android.content.Context
+import android.graphics.Color
 import android.media.MediaMetadataRetriever
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.color.MaterialColors
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
@@ -71,3 +75,21 @@ fun checkPlaylist(playlist: ArrayList<Music>): ArrayList<Music>{
     }
     return playlist
 }
+
+ fun setDialogBtnBackground(context: Context, dialog: AlertDialog){
+     //setting button text
+     dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE)?.setTextColor(
+         MaterialColors.getColor(context, R.attr.dialogTextColor, Color.WHITE)
+     )
+     dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)?.setTextColor(
+         MaterialColors.getColor(context, R.attr.dialogTextColor, Color.WHITE)
+     )
+
+     //setting button background
+     dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE)?.setBackgroundColor(
+         MaterialColors.getColor(context, R.attr.dialogBtnBackground, Color.RED)
+     )
+     dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)?.setBackgroundColor(
+         MaterialColors.getColor(context, R.attr.dialogBtnBackground, Color.RED)
+     )
+ }
