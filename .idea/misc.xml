@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/booster_icon.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/drawable/curved_dialog.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_play_next.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_player.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_playlist.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_playlist_details.xml" value="0.13055555555555556" />
@@ -14,6 +16,7 @@
         <entry key="app/src/main/res/layout/custom_volume.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/favourite_view.xml" value="0.13055555555555556" />
         <entry key="app/src/main/res/layout/fragment_now_playing.xml" value="0.13055555555555556" />
+        <entry key="app/src/main/res/layout/more_features.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/music_view.xml" value="0.25" />
       </map>
     </option>

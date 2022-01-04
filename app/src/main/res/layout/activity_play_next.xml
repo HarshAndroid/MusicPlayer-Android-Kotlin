@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PlayNext">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/themeColor"
+        android:layout_marginTop="2dp">
+
+        <ImageButton
+                android:id="@+id/backBtnPN"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:src="@drawable/back_icon"
+                android:contentDescription="@string/back_btn"
+                android:backgroundTint="@android:color/transparent"
+                app:tint="@color/white"
+                android:padding="5dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/play_next"
+                android:gravity="center"
+                android:text="@string/play_next"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/instructionPN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/play_next_note"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="?attr/dialogBtnBackground"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playNextRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutPN"
+            android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
+            android:scrollbars="vertical"
+            android:paddingBottom="40dp"
+            android:layout_marginTop="10dp"/>
+ </androidx.constraintlayout.widget.ConstraintLayout>

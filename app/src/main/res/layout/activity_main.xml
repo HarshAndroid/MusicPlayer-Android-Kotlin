@@ -64,6 +64,19 @@
                         android:textColor="?colorOnPrimary"
                         android:textAllCaps="false"/>
 
+                    <!--Play Next Button-->
+                    <Button
+                        android:id="@+id/playNextBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/playlist_btn"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:drawableTop="@drawable/play_next_icon"
+                        android:text="@string/play_next"
+                        android:textColor="?colorOnPrimary"
+                        android:textAllCaps="false"/>
+
                 </LinearLayout>
 
                 <!--Total Songs Button-->

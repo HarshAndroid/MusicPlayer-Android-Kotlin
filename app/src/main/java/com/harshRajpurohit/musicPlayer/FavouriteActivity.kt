@@ -29,6 +29,9 @@ class FavouriteActivity : AppCompatActivity() {
         adapter = FavouriteAdapter(this, favouriteSongs)
         binding.favouriteRV.adapter = adapter
         if(favouriteSongs.size < 1) binding.shuffleBtnFA.visibility = View.INVISIBLE
+
+        if(favouriteSongs.isNotEmpty()) binding.instructionFV.visibility = View.GONE
+
         binding.shuffleBtnFA.setOnClickListener {
             val intent = Intent(this, PlayerActivity::class.java)
             intent.putExtra("index", 0)

@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.harshRajpurohit.musicPlayer"
         minSdkVersion 21
-        targetSdkVersion 31
-        versionCode 2
-        versionName "2.0"
+        targetSdkVersion 32
+        versionCode 3
+        versionName "3.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

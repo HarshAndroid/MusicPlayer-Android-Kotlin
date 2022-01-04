@@ -66,4 +66,20 @@
         app:layout_constraintVertical_bias="0.9"
         app:strokeWidth="2dp"
         app:strokeColor="?attr/themeColor"/>
+
+    <TextView
+        android:id="@+id/instructionPA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/playlist_note"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="?attr/dialogBtnBackground"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
