@@ -162,11 +162,12 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                 isFavourite = false
                 binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
                 FavouriteActivity.favouriteSongs.removeAt(fIndex)
-            }
-            else{
+            } else{
                 isFavourite = true
                 binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
-                FavouriteActivity.favouriteSongs.add(musicListPA[songPosition])}
+                FavouriteActivity.favouriteSongs.add(musicListPA[songPosition])
+            }
+            FavouriteActivity.favouritesChanged = true
         }
     }
 //Important Function

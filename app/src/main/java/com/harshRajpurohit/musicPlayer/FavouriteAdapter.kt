@@ -80,4 +80,11 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
         return musicList.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateFavourites(newList: ArrayList<Music>){
+        musicList = ArrayList()
+        musicList.addAll(newList)
+        notifyDataSetChanged()
+    }
+
 }
