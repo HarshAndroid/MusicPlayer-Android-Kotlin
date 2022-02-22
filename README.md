@@ -8,12 +8,14 @@
   <br>https://drive.google.com/file/d/1j0wq07RbNKhfbOcYnRAngx6DHQaa80DP/view?usp=sharing (v4)
 
 <b>Some ScreenShots(Actual App Even Looks Better 😃):</b></br>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_1.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_3.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_6.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_7.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/Screenshot_2021-09-04-09-04-52-897_com.miui.home.jpg" width=30% height=25%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_1.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_8.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_6.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_3.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_5.png" width=30% height=30%/>  
 <br>
 <br>
   
