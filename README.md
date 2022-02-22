@@ -5,23 +5,25 @@
 <b>Simple Yet A Feature Rich Music Player Application.</b></br>
 
 <b>Apk Link (Try it yourself & I would love to hear your feedback 🙂):<b>
-  <br>https://drive.google.com/file/d/1j0wq07RbNKhfbOcYnRAngx6DHQaa80DP/view?usp=sharing (v4)
+  <br>https://drive.google.com/file/d/1Ser8PKnSWG6Gx-0LOalay8o1Ub9RxBZE/view?usp=sharing (v4.0.1)
 
 <b>Some ScreenShots(Actual App Even Looks Better 😃):</b></br>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_7.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_5.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_1.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_8.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_6.png" width=30% height=30%/>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_3.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_5.png" width=30% height=30%/>  
+<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>  
 <br>
 <br>
   
  <b>Features👇 : </b>
 <ul>
 <li>Play Next Feature (i.e. Now You Can Schedule Upcoming Songs)
+<li>Dark Theme(Using Black Theme in Settings)
+<li>Custom Color Gradient According To Each Song Image
 <li>Favourite Songs
 <li>Create & Add Playlists
 <li>Sleep Timer
