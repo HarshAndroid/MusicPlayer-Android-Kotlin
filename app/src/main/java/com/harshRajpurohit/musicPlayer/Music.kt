@@ -1,6 +1,7 @@
  package com.harshRajpurohit.musicPlayer
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.media.MediaMetadataRetriever
 import androidx.appcompat.app.AlertDialog
@@ -92,4 +93,11 @@ fun checkPlaylist(playlist: ArrayList<Music>): ArrayList<Music>{
      dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)?.setBackgroundColor(
          MaterialColors.getColor(context, R.attr.dialogBtnBackground, Color.RED)
      )
+ }
+
+ fun getMainColor(img: Bitmap): Int {
+     val newImg = Bitmap.createScaledBitmap(img, 1,1 , true)
+     val color = newImg.getPixel(0, 0)
+     newImg.recycle()
+     return color
  }

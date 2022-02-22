@@ -17,7 +17,7 @@ class SelectionActivity : AppCompatActivity() {
         binding = ActivitySelectionBinding.inflate(layoutInflater)
         setTheme(MainActivity.currentTheme[MainActivity.themeIndex])
         setContentView(binding.root)
-        binding.selectionRV.setItemViewCacheSize(10)
+        binding.selectionRV.setItemViewCacheSize(30)
         binding.selectionRV.setHasFixedSize(true)
         binding.selectionRV.layoutManager = LinearLayoutManager(this)
         adapter = MusicAdapter(this, MainActivity.MusicListMA, selectionActivity = true)

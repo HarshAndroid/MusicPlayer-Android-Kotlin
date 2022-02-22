@@ -8,7 +8,8 @@
         <entry key="app/src/main/res/drawable/gradient_blue.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/drawable/scroll_bar_icon.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14136125654450263" />
+        <entry key="app/src/main/res/layout/activity_main_new.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_play_next.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_player.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_playlist.xml" value="0.18802083333333333" />

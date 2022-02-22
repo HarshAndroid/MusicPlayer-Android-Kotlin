@@ -36,7 +36,8 @@
             android:textSize="20sp"
             android:gravity="center"
             android:layout_weight="1"
-            tools:ignore="NestedWeights" />
+            tools:ignore="NestedWeights"
+            android:textStyle="bold"/>
 
 <!--        Favourite Button-->
         <ImageButton
