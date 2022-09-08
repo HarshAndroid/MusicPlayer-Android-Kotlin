@@ -5,7 +5,7 @@
 <b>Simple Yet A Feature Rich Music Player Application.</b></br>
 
 <b>Apk Link (Try it yourself & I would love to hear your feedback 🙂):<b>
-  <br>https://drive.google.com/file/d/1Ser8PKnSWG6Gx-0LOalay8o1Ub9RxBZE/view?usp=sharing (v4.0.1)
+  <br>https://drive.google.com/file/d/1scrsuy-zo52tW2iQO-b3QjB7z9ehuxte/view?usp=sharing (v4.0.2)
 
 <b>Some ScreenShots(Actual App Even Looks Better 😃):</b></br>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
@@ -21,6 +21,7 @@
   
  <b>Features👇 : </b>
 <ul>
+<li>Play/Pause Audio Using EarPhones
 <li>Play Next Feature (i.e. Now You Can Schedule Upcoming Songs)
 <li>Dark Theme(Using Black Theme in Settings)
 <li>Custom Color Gradient According To Each Song Image
