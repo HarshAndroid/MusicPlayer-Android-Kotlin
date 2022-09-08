@@ -81,6 +81,28 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
                 .build()
             mediaSession.setPlaybackState(playBackState)
             mediaSession.setCallback(object: MediaSessionCompat.Callback(){
+
+                //called when headphones buttons are pressed
+                //currently only pause or play music on button click
+                override fun onMediaButtonEvent(mediaButtonEvent: Intent?): Boolean {
+                    if(PlayerActivity.isPlaying){
+                        //pause music
+                        PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
+                        NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
+                        PlayerActivity.isPlaying = false
+                        mediaPlayer!!.pause()
+                        showNotification(R.drawable.play_icon)
+                    }else{
+                        //play music
+                        PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
+                        NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
+                        PlayerActivity.isPlaying = true
+                        mediaPlayer!!.start()
+                        showNotification(R.drawable.pause_icon)
+                    }
+
+                    return super.onMediaButtonEvent(mediaButtonEvent)
+                }
                 override fun onSeekTo(pos: Long) {
                     super.onSeekTo(pos)
                     mediaPlayer!!.seekTo(pos.toInt())
