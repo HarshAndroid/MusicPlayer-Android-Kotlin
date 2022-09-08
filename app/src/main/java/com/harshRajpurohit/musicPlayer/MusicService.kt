@@ -100,7 +100,6 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
                         mediaPlayer!!.start()
                         showNotification(R.drawable.pause_icon)
                     }
-
                     return super.onMediaButtonEvent(mediaButtonEvent)
                 }
                 override fun onSeekTo(pos: Long) {
