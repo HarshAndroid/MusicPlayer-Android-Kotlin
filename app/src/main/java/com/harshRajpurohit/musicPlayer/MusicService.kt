@@ -33,19 +33,26 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     @SuppressLint("UnspecifiedImmutableFlag")
     fun showNotification(playPauseBtn: Int){
         val intent = Intent(baseContext, MainActivity::class.java)
-        val contentIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
+        val flag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            PendingIntent.FLAG_IMMUTABLE
+        } else {
+            PendingIntent.FLAG_UPDATE_CURRENT
+        }
+
+        val contentIntent = PendingIntent.getActivity(this, 0, intent, flag)
 
         val prevIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.PREVIOUS)
-        val prevPendingIntent = PendingIntent.getBroadcast(baseContext, 0, prevIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val prevPendingIntent = PendingIntent.getBroadcast(baseContext, 0, prevIntent, flag)
 
         val playIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.PLAY)
-        val playPendingIntent = PendingIntent.getBroadcast(baseContext, 0, playIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val playPendingIntent = PendingIntent.getBroadcast(baseContext, 0, playIntent, flag)
 
         val nextIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.NEXT)
-        val nextPendingIntent = PendingIntent.getBroadcast(baseContext, 0, nextIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val nextPendingIntent = PendingIntent.getBroadcast(baseContext, 0, nextIntent, flag)
 
         val exitIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.EXIT)
-        val exitPendingIntent = PendingIntent.getBroadcast(baseContext, 0, exitIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val exitPendingIntent = PendingIntent.getBroadcast(baseContext, 0, exitIntent, flag)
 
         val imgArt = getImgArt(PlayerActivity.musicListPA[PlayerActivity.songPosition].path)
         val image = if(imgArt != null){
