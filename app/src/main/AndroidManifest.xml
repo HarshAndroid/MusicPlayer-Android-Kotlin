@@ -55,7 +55,8 @@
             android:name=".PlayerActivity"
             android:configChanges="uiMode"
             android:exported="true"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             tools:ignore="AppLinkUrlError,LockedOrientationActivity">
             <intent-filter>
