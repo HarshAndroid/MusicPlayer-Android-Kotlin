@@ -61,7 +61,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
         binding = ActivityPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if(intent.data?.scheme.contentEquals("content")){
-            songPosition = 0;
+            songPosition = 0
             val intentService = Intent(this, MusicService::class.java)
             bindService(intentService, this, BIND_AUTO_CREATE)
             startService(intentService)
@@ -135,17 +135,17 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             if(!timer) showBottomSheetDialog()
             else {
                 val builder = MaterialAlertDialogBuilder(this)
-                    builder.setTitle("Stop Timer")
-                        .setMessage("Do you want to stop timer?")
-                        .setPositiveButton("Yes"){ _, _ ->
-                            min15 = false
-                            min30 = false
-                            min60 = false
-                            binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.cool_pink))
-                        }
-                        .setNegativeButton("No"){dialog, _ ->
-                            dialog.dismiss()
-                        }
+                builder.setTitle("Stop Timer")
+                    .setMessage("Do you want to stop timer?")
+                    .setPositiveButton("Yes"){ _, _ ->
+                        min15 = false
+                        min30 = false
+                        min60 = false
+                        binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.cool_pink))
+                    }
+                    .setNegativeButton("No"){dialog, _ ->
+                        dialog.dismiss()
+                    }
                     val customDialog = builder.create()
                     customDialog.show()
                     setDialogBtnBackground(this, customDialog)
@@ -307,6 +307,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
         NowPlaying.binding.songNameNP.text = musicListPA[songPosition].title
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 13 || resultCode == RESULT_OK)
