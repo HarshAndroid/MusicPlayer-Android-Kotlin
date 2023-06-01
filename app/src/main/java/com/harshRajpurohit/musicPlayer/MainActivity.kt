@@ -123,10 +123,19 @@ class MainActivity : AppCompatActivity() {
     }
     //For requesting permission
     private fun requestRuntimePermission() :Boolean{
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
-            return false
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU){
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
+                return false
+            }
+        }
+        else if(Build.VERSION.SDK_INT == Build.VERSION_CODES.TIRAMISU){
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_MEDIA_AUDIO), 13)
+                return false
+            }
         }
         return true
     }
