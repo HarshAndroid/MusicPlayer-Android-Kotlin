@@ -123,10 +123,20 @@ class MainActivity : AppCompatActivity() {
     }
     //For requesting permission
     private fun requestRuntimePermission() :Boolean{
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
-            return false
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU){
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
+                return false
+            }
+        }
+        //android 13 permission request
+        else if(Build.VERSION.SDK_INT == Build.VERSION_CODES.TIRAMISU){
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_MEDIA_AUDIO), 13)
+                return false
+            }
         }
         return true
     }
@@ -183,7 +193,7 @@ class MainActivity : AppCompatActivity() {
         val cursor = this.contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection,selection,null,
         sortingList[sortOrder], null)
         if(cursor != null){
-            if(cursor.moveToFirst())
+            if(cursor.moveToFirst()){
                 do {
                     val titleC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))?:"Unknown"
                     val idC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID))?:"Unknown"
@@ -200,7 +210,8 @@ class MainActivity : AppCompatActivity() {
                     if(file.exists())
                         tempList.add(music)
                 }while (cursor.moveToNext())
-                cursor.close()
+            }
+            cursor.close()
         }
         return tempList
     }
