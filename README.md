@@ -5,7 +5,7 @@
 <b>Simple Yet A Feature Rich Music Player Application.</b></br>
 
 <b>Apk Link (Try it yourself & I would love to hear your feedback 🙂):<b>
-  <br>https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/Music%20Player%20v4.0.4(8).apk (v4.0.4)
+  <br>https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/Music%20Player%20v4.0.5-9.apk (v4.0.5)
 
 <b>Some ScreenShots(Actual App Even Looks Better 😃):</b></br>
 <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
