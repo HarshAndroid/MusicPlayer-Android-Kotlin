@@ -124,20 +124,22 @@ class MainActivity : AppCompatActivity() {
     //For requesting permission
     private fun requestRuntimePermission() :Boolean{
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU){
-            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 13)
                 return false
             }
-        }
-        //android 13 permission request
-        else if(Build.VERSION.SDK_INT == Build.VERSION_CODES.TIRAMISU){
+        }else{
+            //android 13 or Higher permission request
             if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_MEDIA_AUDIO), 13)
                 return false
             }
         }
+
+
+
         return true
     }
 
@@ -248,6 +250,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.search_view_menu, menu)
         //for setting gradient
         findViewById<LinearLayout>(R.id.linearLayoutNav)?.setBackgroundResource(currentGradient[themeIndex])
+
         val searchView = menu?.findItem(R.id.searchView)?.actionView as SearchView
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean = true

@@ -2,13 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
+<!--    <uses-permission-->
+<!--        android:name="android.permission.WRITE_EXTERNAL_STORAGE"-->
+<!--        tools:ignore="ScopedStorage" />-->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
     <!-- permission for android 13-->
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Permission for Android 14   -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,37 +29,46 @@
         android:supportsRtl="true"
         android:theme="@style/splash_screen"
         tools:ignore="AllowBackup">
+
         <activity
             android:name=".PlayNext"
             android:exported="false" />
+
         <activity
             android:name=".AboutActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".SettingsActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-<!--        <activity-->
+
+        <!--        <activity-->
 <!--            android:name=".FeedbackActivity"-->
 <!--            android:screenOrientation="portrait"-->
 <!--            tools:ignore="LockedOrientationActivity" />-->
+
         <activity
             android:name=".SelectionActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".PlaylistDetails"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".PlaylistActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".FavouriteActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".PlayerActivity"
             android:configChanges="uiMode"
@@ -71,6 +88,7 @@
                     android:scheme="content" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:configChanges="uiMode"
@@ -85,7 +103,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MusicService" />
+        <!-- Updated Permission for Android 14   -->
+        <service
+            android:name=".MusicService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false"
+            />
 
         <receiver
             android:name=".NotificationReceiver"
