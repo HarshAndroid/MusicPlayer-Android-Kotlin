@@ -165,8 +165,7 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
         return PlaybackStateCompat.Builder().setState(
             if (mediaPlayer?.isPlaying == true) PlaybackStateCompat.STATE_PLAYING else PlaybackStateCompat.STATE_PAUSED,
             mediaPlayer!!.currentPosition.toLong(), playbackSpeed)
-            .setActions(PlaybackStateCompat.ACTION_PLAY_PAUSE)
-            .setActions(PlaybackStateCompat.ACTION_SEEK_TO)
+            .setActions(PlaybackStateCompat.ACTION_PLAY_PAUSE or PlaybackStateCompat.ACTION_SEEK_TO)
             .build()
     }
 
