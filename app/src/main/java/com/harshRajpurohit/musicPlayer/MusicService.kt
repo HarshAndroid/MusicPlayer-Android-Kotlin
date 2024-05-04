@@ -3,6 +3,7 @@ package com.harshRajpurohit.musicPlayer
 import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.AudioManager
@@ -12,6 +13,8 @@ import android.os.*
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
     private var myBinder = MyBinder()
@@ -106,6 +109,18 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
                     handlePlayPause()
                 }
 
+                //called when next button is pressed
+                override fun onSkipToNext() {
+                    super.onSkipToNext()
+                    prevNextSong(increment = true, context = baseContext)
+                }
+
+                //called when previous button is pressed
+                override fun onSkipToPrevious() {
+                    super.onSkipToPrevious()
+                    prevNextSong(increment = false, context = baseContext)
+                }
+
                 //called when headphones buttons are pressed
                 //currently only pause or play music on button click
                 override fun onMediaButtonEvent(mediaButtonEvent: Intent?): Boolean {
@@ -165,49 +180,78 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
         return PlaybackStateCompat.Builder().setState(
             if (mediaPlayer?.isPlaying == true) PlaybackStateCompat.STATE_PLAYING else PlaybackStateCompat.STATE_PAUSED,
             mediaPlayer!!.currentPosition.toLong(), playbackSpeed)
-            .setActions(PlaybackStateCompat.ACTION_PLAY_PAUSE or PlaybackStateCompat.ACTION_SEEK_TO)
+            .setActions(PlaybackStateCompat.ACTION_PLAY_PAUSE or PlaybackStateCompat.ACTION_SEEK_TO or PlaybackStateCompat.ACTION_SKIP_TO_NEXT or PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS)
             .build()
     }
 
     fun handlePlayPause() {
-        if (PlayerActivity.isPlaying) {
-            //pause music
-            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
-            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
-            PlayerActivity.isPlaying = false
-            mediaPlayer?.pause()
-            showNotification(R.drawable.play_icon)
-        } else {
-            //play music
-            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
-            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
-            PlayerActivity.isPlaying = true
-            mediaPlayer?.start()
-            showNotification(R.drawable.pause_icon)
-        }
+        if (PlayerActivity.isPlaying) pauseMusic()
+        else playMusic()
+
+        //update playback state for notification
+        mediaSession.setPlaybackState(getPlayBackState())
+    }
+
+
+
+    private fun prevNextSong(increment: Boolean, context: Context){
+
+        setSongPosition(increment = increment)
+
+        PlayerActivity.musicService?.createMediaPlayer()
+        Glide.with(context)
+            .load(PlayerActivity.musicListPA[PlayerActivity.songPosition].artUri)
+            .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
+            .into(PlayerActivity.binding.songImgPA)
+
+        PlayerActivity.binding.songNamePA.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].title
+
+        Glide.with(context)
+            .load(PlayerActivity.musicListPA[PlayerActivity.songPosition].artUri)
+            .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
+            .into(NowPlaying.binding.songImgNP)
+
+        NowPlaying.binding.songNameNP.text = PlayerActivity.musicListPA[PlayerActivity.songPosition].title
+
+        playMusic()
+
+        PlayerActivity.fIndex = favouriteChecker(PlayerActivity.musicListPA[PlayerActivity.songPosition].id)
+        if(PlayerActivity.isFavourite) PlayerActivity.binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
+        else PlayerActivity.binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
+
         //update playback state for notification
         mediaSession.setPlaybackState(getPlayBackState())
     }
 
     override fun onAudioFocusChange(focusChange: Int) {
         if (focusChange <= 0) {
-            //pause music
-            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
-            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
-            PlayerActivity.isPlaying = false
-            mediaPlayer!!.pause()
-            showNotification(R.drawable.play_icon)
-
+            pauseMusic()
         }
 //        else{
-//            //play music
-//            PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
-//            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
-//            PlayerActivity.isPlaying = true
-//            mediaPlayer!!.start()
-//            showNotification(R.drawable.pause_icon)
+//            playMusic()
 //        }
     }
+
+    private fun playMusic(){
+        //play music
+        PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
+        NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.pause_icon)
+        PlayerActivity.isPlaying = true
+        mediaPlayer?.start()
+        showNotification(R.drawable.pause_icon)
+    }
+
+    private fun pauseMusic(){
+        //pause music
+        PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.play_icon)
+        NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
+        PlayerActivity.isPlaying = false
+        mediaPlayer!!.pause()
+        showNotification(R.drawable.play_icon)
+    }
+
+
+
 
     //for making persistent
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
