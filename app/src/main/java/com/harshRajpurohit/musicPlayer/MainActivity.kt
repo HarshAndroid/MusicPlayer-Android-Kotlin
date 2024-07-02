@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
                 initializeLayout()
             }
             else
-                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 13)
         }
     }
 
