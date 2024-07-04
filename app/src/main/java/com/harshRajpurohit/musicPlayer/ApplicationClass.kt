@@ -7,7 +7,7 @@ import android.os.Build
 
 class ApplicationClass:Application() {
     companion object{
-        const val CHANNEL_ID = "channel1"
+        const val CHANNEL_ID = "MusicNotification"
         const val PLAY = "play"
         const val NEXT = "next"
         const val PREVIOUS = "previous"
@@ -17,7 +17,7 @@ class ApplicationClass:Application() {
         super.onCreate()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val notificationChannel = NotificationChannel(CHANNEL_ID, "Now Playing Song", NotificationManager.IMPORTANCE_HIGH)
-            notificationChannel.description = "This is a important channel for showing song!!"
+            notificationChannel.description = "Needed to Show Notification for Playing Song"
             //for lockscreen -> test this and let me know.
 //            notificationChannel.importance = NotificationManager.IMPORTANCE_HIGH
 //            notificationChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC

@@ -1,31 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="app/src/main/res/drawable/booster_icon.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/drawable/curved_dialog.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/drawable/gradient_blue.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/drawable/scroll_bar_icon.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/layout/activity_favourite.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main_new.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_play_next.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/activity_player.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/activity_playlist.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/activity_playlist_details.xml" value="0.13055555555555556" />
-        <entry key="app/src/main/res/layout/activity_selection.xml" value="0.13055555555555556" />
-        <entry key="app/src/main/res/layout/add_playlist_dialog.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/audio_booster.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/custom_volume.xml" value="0.171875" />
-        <entry key="app/src/main/res/layout/details_view.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/favourite_view.xml" value="0.13055555555555556" />
-        <entry key="app/src/main/res/layout/fragment_now_playing.xml" value="0.13055555555555556" />
-        <entry key="app/src/main/res/layout/more_features.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/music_view.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/playlist_view.xml" value="0.18802083333333333" />
-      </map>
-    </option>
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

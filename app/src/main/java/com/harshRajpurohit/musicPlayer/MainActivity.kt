@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         MediaStore.Audio.Media.SIZE + " DESC")
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val themeEditor = getSharedPreferences("THEMES", MODE_PRIVATE)
@@ -137,13 +137,10 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         }
-
-
-
         return true
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
+
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if(requestCode == 13){
@@ -151,6 +148,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Permission Granted",Toast.LENGTH_SHORT).show()
                 initializeLayout()
             }
+//            else ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), 13)
         }
     }
 
@@ -160,7 +158,6 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     @SuppressLint("SetTextI18n")
     private fun initializeLayout(){
         search = false
@@ -182,39 +179,61 @@ class MainActivity : AppCompatActivity() {
             binding.refreshLayout.isRefreshing = false
         }
     }
+
     @SuppressLint("Recycle", "Range")
-    @RequiresApi(Build.VERSION_CODES.R)
-    private fun getAllAudio(): ArrayList<Music>{
+    private fun getAllAudio(): ArrayList<Music> {
         val tempList = ArrayList<Music>()
-        val selection = MediaStore.Audio.Media.IS_MUSIC +  " != 0"
-        val projection = arrayOf(MediaStore.Audio.Media._ID,MediaStore.Audio.Media.TITLE,MediaStore.Audio.Media.ALBUM,
-            MediaStore.Audio.Media.ARTIST,MediaStore.Audio.Media.DURATION,MediaStore.Audio.Media.DATE_ADDED,
-            MediaStore.Audio.Media.DATA, MediaStore.Audio.Media.ALBUM_ID)
-        val cursor = this.contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection,selection,null,
-        sortingList[sortOrder], null)
-        if(cursor != null){
-            if(cursor.moveToFirst()){
+
+        // Filter Only Music or Audio Files
+        val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0 AND " + MediaStore.Audio.Media.MIME_TYPE + " LIKE 'audio/%'"
+        val projection = arrayOf(
+            MediaStore.Audio.Media._ID,
+            MediaStore.Audio.Media.TITLE,
+            MediaStore.Audio.Media.ALBUM,
+            MediaStore.Audio.Media.ARTIST,
+            MediaStore.Audio.Media.DURATION,
+            MediaStore.Audio.Media.DATE_ADDED,
+            MediaStore.Audio.Media.DATA,
+            MediaStore.Audio.Media.ALBUM_ID
+        )
+        val cursor = this.contentResolver.query(
+            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
+            sortingList[sortOrder], null
+        )
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
                 do {
-                    val titleC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))?:"Unknown"
-                    val idC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID))?:"Unknown"
-                    val albumC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM))?:"Unknown"
-                    val artistC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))?:"Unknown"
+                    val titleC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE)) ?: "Unknown"
+                    val idC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID)) ?: "Unknown"
+                    val albumC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM)) ?: "Unknown"
+                    val artistC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST)) ?: "Unknown"
                     val pathC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
                     val durationC = cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION))
                     val albumIdC = cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID)).toString()
                     val uri = Uri.parse("content://media/external/audio/albumart")
                     val artUriC = Uri.withAppendedPath(uri, albumIdC).toString()
-                    val music = Music(id = idC, title = titleC, album = albumC, artist = artistC, path = pathC, duration = durationC,
-                    artUri = artUriC)
-                    val file = File(music.path)
-                    if(file.exists())
-                        tempList.add(music)
-                }while (cursor.moveToNext())
+
+                    // Only add the music file if the duration is greater than 0
+                    if (durationC > 0) {
+                        val music = Music(
+                            id = idC,
+                            title = titleC,
+                            album = albumC,
+                            artist = artistC,
+                            path = pathC,
+                            duration = durationC,
+                            artUri = artUriC
+                        )
+
+                        if (File(music.path).exists()) tempList.add(music)
+                    }
+                } while (cursor.moveToNext())
             }
             cursor.close()
         }
         return tempList
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -223,9 +242,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onResume() {
         super.onResume()
+
         //for storing favourites data using shared preferences
         val editor = getSharedPreferences("FAVOURITES", MODE_PRIVATE).edit()
         val jsonString = GsonBuilder().create().toJson(FavouriteActivity.favouriteSongs)
@@ -233,6 +252,7 @@ class MainActivity : AppCompatActivity() {
         val jsonStringPlaylist = GsonBuilder().create().toJson(PlaylistActivity.musicPlaylist)
         editor.putString("MusicPlaylist", jsonStringPlaylist)
         editor.apply()
+
         //for sorting
         val sortEditor = getSharedPreferences("SORTING", MODE_PRIVATE)
         val sortValue = sortEditor.getInt("sortOrder", 0)
