@@ -20,6 +20,7 @@ class Playlist{
     lateinit var createdBy: String
     lateinit var createdOn: String
 }
+
 class MusicPlaylist{
     var ref: ArrayList<Playlist> = ArrayList()
 }
@@ -30,11 +31,13 @@ fun formatDuration(duration: Long):String{
             minutes*TimeUnit.SECONDS.convert(1, TimeUnit.MINUTES))
     return String.format("%02d:%02d", minutes, seconds)
 }
+
 fun getImgArt(path: String): ByteArray? {
     val retriever = MediaMetadataRetriever()
     retriever.setDataSource(path)
     return retriever.embeddedPicture
 }
+
 fun setSongPosition(increment: Boolean){
     if(!PlayerActivity.repeat){
         if(increment)
@@ -49,6 +52,7 @@ fun setSongPosition(increment: Boolean){
         }
     }
 }
+
 fun exitApplication(){
     if(PlayerActivity.musicService != null){
         PlayerActivity.musicService!!.audioManager.abandonAudioFocus(PlayerActivity.musicService)
@@ -68,13 +72,17 @@ fun favouriteChecker(id: String): Int{
     }
     return -1
 }
+
 fun checkPlaylist(playlist: ArrayList<Music>): ArrayList<Music>{
+    val indicesToRemove = mutableListOf<Int>()
+
     playlist.forEachIndexed { index, music ->
-        val file = File(music.path)
-        if(!file.exists())
-            playlist.removeAt(index)
+        if (!File(music.path).exists()) indicesToRemove.add(index)
     }
-    return playlist
+    
+    indicesToRemove.sortDescending()
+    indicesToRemove.forEach { index -> playlist.removeAt(index) }
+    return  playlist
 }
 
  fun setDialogBtnBackground(context: Context, dialog: AlertDialog){
