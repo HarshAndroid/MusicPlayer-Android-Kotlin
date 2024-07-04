@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.harshRajpurohit.musicPlayer2"
+        applicationId = "com.harshRajpurohit.musicPlayer"
         minSdk = 21
         targetSdk = 34
         versionCode = 11
