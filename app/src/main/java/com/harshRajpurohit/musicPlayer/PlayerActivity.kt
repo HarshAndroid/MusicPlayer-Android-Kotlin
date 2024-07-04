@@ -21,7 +21,6 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -51,10 +50,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
         lateinit var loudnessEnhancer: LoudnessEnhancer
     }
 
-
-
     @SuppressLint("SetTextI18n")
-    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(MainActivity.currentTheme[MainActivity.themeIndex])
@@ -343,7 +339,8 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             dialog.dismiss()
         }
     }
-    @RequiresApi(Build.VERSION_CODES.Q)
+
+
     private fun getMusicDetails(contentUri: Uri): Music{
         var cursor: Cursor? = null
         try {
