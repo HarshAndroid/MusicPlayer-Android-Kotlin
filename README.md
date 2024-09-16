@@ -1,47 +1,69 @@
 # MusicPlayer
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Kotlin](https://img.shields.io/badge/Kotlin-100%25-brightgreen)
 
-<b>Simple Yet A Feature Rich Music Player Application.</b></br>
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)  ![Kotlin](https://img.shields.io/badge/Kotlin-100%25-brightgreen)
 
-<b>Apk Link (Try it yourself & I would love to hear your feedback 🙂):<b>
-  <br>https://drive.google.com/file/d/1dC3mXP6BIqyHvDyXDZioz882YzgdoFCo/view?usp=drivesdk (v2.0.1 - 11)
+**A Simple Yet Feature-Rich Music Player Application based on Native MediaPlayer.**
 
-<b>Some ScreenShots(Actual App Even Looks Better 😃):</b></br>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_7.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_5.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_1.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_8.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_6.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_3.png" width=30% height=30%/>
-<img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>  
-<br>
-<br>
-  
- <b>Features👇 : </b>
-<ul>
-<li>Play/Pause Audio Using EarPhones
-<li>Play Next Feature (i.e. Now You Can Schedule Upcoming Songs)
-<li>Dark Theme(Using Black Theme in Settings)
-<li>Custom Color Gradient According To Each Song Image
-<li>Favourite Songs
-<li>Create & Add Playlists
-<li>Sleep Timer
-<li>Audio Booster
-<li>Built-in System Equalizer
-<li>Audio Booster or Audio Amplifier
-<li>Custom Themes</br>
-<li>Swipe to Refresh UI
-<li>Background Playing with Custom Notification
-<li>Android 10 Notification with Seekbar
-<li>Decent UI with New Material Widgets
-<li>And Much More....
-</ul>
-  
-<b>Watch Full Playlist on Youtube:</b>
-  https://youtube.com/playlist?list=PL8kbUJtS6hyaRM3LhIYOqIXK7LIoEJ4Qf
-  <br><br>
-  <b>Note:</b> This Project is Much More Improved (i.e. Contains New Features) & Optimized than Youtube Course Project.
-  
-  For Feedback or Suggestions Mail Me At rajpurohitharsh2020@gmail.com 🙂
+---
+
+## 📦 APK Download
+
+Try it yourself and I’d love to hear your feedback 🙂:
+
+- [Download APK v2.0.1](https://drive.google.com/file/d/1dC3mXP6BIqyHvDyXDZioz882YzgdoFCo/view?usp=drivesdk)
+
+---
+
+## 📸 Screenshots
+
+**Actual app looks even better! 😃**
+
+<kbd>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_2.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_7.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_5.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_1.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_8.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_6.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_3.png" width=30% height=30%/>
+  <img src="https://github.com/HarshAndroid/MusicPlayer/blob/master/music_player_screenshots/screen_4.png" width=30% height=30%/>
+</kbd>
+
+---
+
+## ✨ Features
+
+- **Play/Pause Audio** using earphones.
+- **Play Next** feature—schedule upcoming songs.
+- **Dark Theme** with black theme option in settings.
+- **Custom Color Gradient** for each song based on album art.
+- **Favorite Songs** for easy access.
+- **Create & Manage Playlists**.
+- **Sleep Timer** for auto-shutdown.
+- **Audio Booster** and **Built-in Equalizer**.
+- **Custom Themes** for personalization.
+- **Swipe to Refresh** UI.
+- **Background Playback** with custom notifications.
+- Android 10 **notification with seek bar**.
+- Clean and modern UI with **Material Design Widgets**.
+- **And much more...**
+
+---
+
+## 🎥 YouTube Course
+
+Watch the full YouTube playlist:  
+[Watch on YouTube](https://youtube.com/playlist?list=PL8kbUJtS6hyaRM3LhIYOqIXK7LIoEJ4Qf)
+
+---
+
+## 💡 Note
+
+This project is much more improved and optimized than the YouTube course project, with new features and better performance.
+
+---
+
+## 💬 Feedback and Suggestions
+
+For any feedback or suggestions, feel free to contact me via email:  
+📧 [rajpurohitharsh2020@gmail.com](mailto:rajpurohitharsh2020@gmail.com)
