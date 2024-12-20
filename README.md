@@ -10,7 +10,7 @@
 
 Try it yourself and I’d love to hear your feedback 🙂:
 
-- [Download APK v2.0.1](https://drive.google.com/file/d/1dC3mXP6BIqyHvDyXDZioz882YzgdoFCo/view?usp=drivesdk)
+- [Download APK v2.0.0](https://drive.google.com/file/d/1HVmzkB4hSVR9_EcPAaj-VuQ4wbKfjsPj/view?usp=sharing)
 
 ---
 
