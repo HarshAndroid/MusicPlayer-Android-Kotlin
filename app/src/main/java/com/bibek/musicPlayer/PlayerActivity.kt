@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
@@ -13,7 +13,6 @@ import android.media.MediaPlayer
 import android.media.audiofx.AudioEffect
 import android.media.audiofx.LoudnessEnhancer
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.provider.MediaStore
@@ -27,8 +26,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayerBinding
-import com.harshRajpurohit.musicPlayer.databinding.AudioBoosterBinding
+import com.bibek.musicPlayer.databinding.ActivityPlayerBinding
+import com.bibek.musicPlayer.databinding.AudioBoosterBinding
 
 class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
 

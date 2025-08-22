@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent

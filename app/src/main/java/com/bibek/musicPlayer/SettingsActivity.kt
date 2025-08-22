@@ -1,10 +1,10 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivitySettingsBinding
+import com.bibek.musicPlayer.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.GsonBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlaylistDetailsBinding
+import com.bibek.musicPlayer.databinding.ActivityPlaylistDetailsBinding
 
 class PlaylistDetails : AppCompatActivity() {
 

@@ -1,10 +1,10 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayNextBinding
+import com.bibek.musicPlayer.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
 

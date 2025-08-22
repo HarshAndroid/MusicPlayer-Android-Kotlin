@@ -1,8 +1,8 @@
-package com.harshRajpurohit.musicPlayer
+package com.bibek.musicPlayer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.harshRajpurohit.musicPlayer.databinding.ActivityAboutBinding
+import com.bibek.musicPlayer.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class AboutActivity : AppCompatActivity() {
         binding.aboutText.text = aboutText()
     }
     private fun aboutText(): String{
-        return "Developed By: Harsh H. Rajpurohit" +
+        return "Developed By: Bibek Dhakal and Rojita Baskota" +
                 "\n\nIf you want to provide feedback, I will love to hear that."
     }
 }
