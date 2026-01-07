@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="8dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/onlineTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎧 Online Music"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:padding="8dp"/>
+
+    <!-- Online Badge -->
+    <TextView
+        android:id="@+id/onlineBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ONLINE MODE"
+        android:textColor="@android:color/white"
+        android:background="@color/black"
+        android:padding="6dp"
+        android:textSize="12sp"/>
+
+    <!-- Progress -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:padding="16dp"/>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/onlineMusicRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
