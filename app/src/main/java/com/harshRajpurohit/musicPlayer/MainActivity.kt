@@ -100,6 +100,12 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId)
             {
 //                R.id.navFeedback -> startActivity(Intent(this@MainActivity, FeedbackActivity::class.java))
+                R.id.nav_online_music -> {
+                    startActivity(
+                        Intent(this, OnlineMusicActivity::class.java)
+                    )
+                }
+
                 R.id.navSettings -> startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
                 R.id.navAbout -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
                 R.id.navExit -> {
