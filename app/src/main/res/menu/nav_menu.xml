@@ -5,6 +5,11 @@
 <!--        android:title="@string/feedback"-->
 <!--        android:icon="@drawable/feedback_icon"/>-->
 
+    <item
+        android:id="@+id/nav_online_music"
+        android:title="Online Music"
+        android:icon="@drawable/ic_launcher_foreground" />
+
     <item android:id="@+id/navSettings"
         android:title="@string/settings"
         android:icon="@drawable/settings_icon"/>
