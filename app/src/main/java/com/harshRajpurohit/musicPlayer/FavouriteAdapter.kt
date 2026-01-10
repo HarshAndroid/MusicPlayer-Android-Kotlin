@@ -27,6 +27,7 @@ class FavouriteAdapter(private val context: Context, private var musicList: Arra
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         return MyHolder(FavouriteViewBinding.inflate(LayoutInflater.from(context), parent, false))
     }
+
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         holder.name.text = musicList[position].title
