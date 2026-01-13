@@ -6,11 +6,38 @@
 
 ---
 
-## 📦 APK Download
+## 📦 APK Download (Offline Version)
 
 Try it yourself and I’d love to hear your feedback 🙂:
 
-- [Download APK v2.0.0](https://drive.google.com/file/d/1HVmzkB4hSVR9_EcPAaj-VuQ4wbKfjsPj/view?usp=sharing)
+- 🔗[Download APK v2.0.0](https://drive.google.com/file/d/1HVmzkB4hSVR9_EcPAaj-VuQ4wbKfjsPj/view?usp=sharing)
+
+## 📥 APK Download (Online Version)
+
+- 🔗[Download APK v2.0.1](https://drive.google.com/file/d/1dGmT11nsAoC6JhHCYiK4q9OSb1ZSLt-N/view?usp=drive_link)
+
+## 🌐 Online Mode
+
+The online mode enables users to stream music using remote data sources.  
+The following components and libraries are used to implement the online streaming feature:
+
+### 🔧 Technologies & Libraries Used
+- **Retrofit** – for making network API requests
+- **REST API** – to fetch online music data
+- **ViewModel** – to manage UI-related data lifecycle-aware
+- **LiveData / StateFlow** – for observing music data changes
+- **Coroutines** – for asynchronous background operations
+- **RecyclerView / LazyColumn** – to display online music list
+- **ExoPlayer** – for streaming and playback
+- **Internet Permission** – required for network access
+
+### ✨ Key Functionalities
+- Fetch music data from an online source
+- Stream music directly without local storage
+- Separate handling of offline and online modes
+- Graceful UI updates based on network responses
+
+> Note: This mode requires an active internet connection.
 
 ---
 
